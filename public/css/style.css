@@ -1,0 +1,347 @@
+/* Box Model Hack */
+* {
+    box-sizing: border-box;
+}
+
+/* Clear fix hack */
+.clearfix:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+}
+
+.clear {
+    clear: both;
+}
+
+/******************************************
+/* BASE STYLES
+/*******************************************/
+:root {
+    --light-text-color: #848484;
+    --light-text-hover-color: #4e4b4b;
+    --light-bg-color: rgb(236, 235, 235);
+}
+
+body {
+    font-family: "Raleway", sans-serif;
+    min-width: 375px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+
+#bodyWrapper {
+    max-width: 2000px;
+    margin: 0 auto;
+    background-color: white;
+}
+
+#mobileNav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    height: 0px;
+}
+
+#mobileNav ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#mobileNav li {
+    margin: 15px;
+}
+
+#mobileMenuLink {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 30px;
+}
+
+#bodyWrapper {
+    /* overflow: auto; */
+    padding: 1rem;
+}
+
+#header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#logo {
+    margin-top: 80px;
+}
+
+#topNav {
+    display: none;
+    width: 50%;
+    max-width: 400px;
+}
+
+#topNav nav > ul {
+    display: flex;
+}
+
+#topNav nav ul > li {
+    position: relative;
+    padding: 0 30px;
+}
+
+#workDropdown {
+    display: none;
+    position: absolute;
+    left: 0;
+    padding-left: 0;
+}
+
+#workDropdown .visibleMenu {
+    display: block;
+}
+
+#topNav li:hover > #workDropdown {
+    display: block;
+    min-width: 250px;
+    padding-top: 20px;
+}
+
+#workDropdown li {
+    margin: 15px auto;
+    padding: 0 30px;
+    position: relative;
+    width: 100%;
+}
+
+#galleryWrapper {
+    margin-top: 50px;
+    column-count: 1;
+    column-gap: 8px;
+    line-height: 0;
+}
+
+#galleryWrapper img {
+    width: 100%;
+    height: auto;
+}
+
+.img_container {
+    position: relative;
+    margin-bottom: 8px;
+}
+
+.img_overlay {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 1.5rem;
+}
+
+#modal {
+    display: none;
+    align-items: center;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 2000px;
+    height: 100vh;
+}
+
+#closeModalButton {
+    position: absolute;
+    right: 25px;
+    top: 25px;
+    padding: 0;
+}
+
+#modal img {
+    object-fit: contain;
+    width: 100%;
+    height: auto;
+    max-height: 75vh;
+}
+
+#modalNavigation {
+    position: absolute;
+    display: flex;
+    width: 100%;
+    bottom: 5vh;
+}
+
+#modal ul {
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+}
+
+#modal span {
+    margin: 0 10px;
+}
+
+/******************************************
+/* ADDITIONAL STYLES
+/*******************************************/
+#mobileNav {
+    background-color: var(--light-bg-color);
+    transition: 1s ease-in-out;
+    color: var(--light-text-color);
+}
+
+#mobileMenuLink {
+    background-color: white;
+    color: var(--light-text-color);
+    cursor: pointer;
+}
+
+#logo a {
+    font-family: "Poiret One", sans-serif;
+    font-size: max(3.4rem, 14vw);
+    margin: 0 auto;
+    color: black;
+}
+
+#topNav nav > ul > li {
+    border-left: 2px solid var(--light-text-color);
+}
+
+#topNav nav ul > li:first-child {
+    border-left: none;
+}
+
+#topNav li {
+    font-size: 1rem;
+    color: var(--light-text-color);
+    cursor: pointer;
+}
+
+#topNav li:hover {
+    color: var(--light-text-hover-color);
+}
+
+#workDropdown {
+    background-color: white;
+    z-index: 2;
+}
+
+#workDropdown:hover {
+    box-shadow: -1px 1px 2px -1px rgb(82, 79, 79);
+    z-index: 2;
+}
+
+#workDropdown a:hover {
+    padding-left: 10px;
+    border-left: 2px solid var(--light-text-color);
+    transition: padding 0.3s ease;
+}
+
+.img_overlay {
+    color: white;
+    font-size: 8vw;
+    font-family: "Raleway", sans-serif;
+    background: rgba(0, 0, 0, 0.6);
+    opacity: 0;
+    transition: 0.4s ease-in-out;
+}
+
+.img_overlay span {
+    line-height: normal;
+    text-align: center;
+}
+
+.img_overlay:hover {
+    opacity: 1;
+}
+
+#modal {
+    background-color: black;
+}
+
+#closeModalButton {
+    border: 0;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+#modal ul {
+    color: white;
+    font-size: 1.5rem;
+}
+
+#modal button {
+    color: white;
+    background-color: transparent;
+    border: none;
+}
+
+/******************************************
+/* MEDIA QUERIES
+/*******************************************/
+@media (min-width: 800px) {
+    #mobileMenuLink {
+        display: none;
+    }
+
+    #bodyWrapper {
+        padding: 6rem 3rem;
+    }
+
+    #header {
+        justify-content: space-between;
+        height: 100px;
+    }
+
+    #topNav {
+        display: flex;
+    }
+
+    #logo {
+        margin-top: 0;
+    }
+
+    #logo a {
+        font-size: min(7vw, 6rem);
+    }
+
+    #galleryWrapper {
+        column-count: 2;
+    }
+
+    .img_overlay {
+        font-size: 2rem;
+    }
+}
+
+@media (min-width: 1200px) {
+    #galleryWrapper {
+        column-count: 3;
+    }
+}
+
+@media (min-width: 1600px) {
+    #galleryWrapper {
+        column-count: 4;
+    }
+}
