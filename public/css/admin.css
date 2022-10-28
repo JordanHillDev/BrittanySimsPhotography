@@ -1,6 +1,6 @@
 #images {
-    padding: 2rem;
-    /* border-bottom: 2px solid gray; */
+    margin-top: 50px;
+    padding: 1rem;
 }
 
 #images h2 {
@@ -22,6 +22,18 @@ button {
     align-items: center;
 }
 
+.adminForm {
+   width: 100%;
+}
+
+#category {
+    margin-left: 16px;
+}
+
+.adminForm button {
+   margin-left: 210px;
+}
+
 #adminImgGallery {
     display: flex;
     flex-wrap: wrap;
@@ -34,8 +46,9 @@ button {
     display: flex;
     flex-direction: column;
     align-items: center;
-    border-top: 1px solid gray;
     padding: 2rem;
+    background-color: hsl(197, 10%, 87%);
+    border-radius: .5em;
 }
 
 #adminImgGallery img {
@@ -47,4 +60,8 @@ button {
 
 .adminImgWrapper span {
     margin-top: 10px;
+}
+
+.adminImgWrapper form {
+    margin-top: auto;
 }
