@@ -1,8 +1,15 @@
+const Image = require("../models/Image");
+
 module.exports = {
-    getIndex: (req, res) => {
-        res.render('index.ejs')
+    getIndex: async (req, res) => {
+        try {
+            const images = await Image.find({ category: 'concert'});
+            console.log(images)
+            res.render("index.ejs", {
+                images: images
+            });
+        } catch (error) {
+            console.log(error);
+        }
     },
-    getAdmin: (req, res) => {
-        res.render('admin.ejs')
-    }
-}
+};

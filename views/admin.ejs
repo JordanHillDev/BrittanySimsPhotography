@@ -16,6 +16,7 @@
         <link rel="stylesheet" href="css/normalize.css" />
         <link rel="stylesheet" href="css/reset.css" />
         <link rel="stylesheet" href="css/style.css" />
+        <link rel="stylesheet" href="css/admin.css" />
     </head>
     <body>
         <div id="mobileNav">
@@ -57,6 +58,53 @@
                 </header>
             </div>
         </div>
-        <script src="js/main.js"></script>
+
+        <section id="images">
+            <h2>Images</h2>
+            <form class="adminForm" action="admin/addImg" enctype="multipart/form-data" method="POST">
+                <div>
+                    <label for="description">Description</label>
+                    <input type="text" id="description" name="description" />
+                </div>
+                <div>
+                    <label for="category">Category</label>
+                    <select name="category" id="category">
+                        <option value="concert">Concert</option>
+                        <option value="lifestyle">Lifestyle</option>
+                        <option value="realEstate">Real Estate</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="imageUpload">Image</label>
+                    <input type="file" id="imageUpload" name="file" />
+                </div>
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+
+        <section id="adminGalleryWrapper">
+            <select name="selectCategory" id="selectCategory">
+                <option value="all">All</option>
+                <option value="concert">Concert</option>
+                <option value="lifestyle">Lifestyle</option>
+                <option value="realEstate">Real Estate</option>
+            </select>
+
+            <section id="adminImgGallery">
+                <% images.forEach(img => { %>
+                    <div data-category=<%= img.category %> class="adminImgWrapper">
+                        <img src=<%= img.image %>>
+                        <span><%= img.description %></span>
+                        <form action="admin/delete/<%= img._id %>?_method=DELETE" method="POST">
+                            <button type="submit">Remove</button>
+                        </form>
+                    </div>
+                    
+                <% }) %>
+            </section>
+        </section>
+        
+
+        <script src="js/admin.js"></script>
     </body>
 </html>

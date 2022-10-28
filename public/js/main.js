@@ -51,3 +51,4 @@ lastButton.addEventListener('click', function(){
     modalImg.src = imgSrcArr[((imgSrcArr.indexOf(currImg) - 1) % imgSrcArr.length + imgSrcArr.length) % imgSrcArr.length]
     currImg = modalImg.src
 })
+

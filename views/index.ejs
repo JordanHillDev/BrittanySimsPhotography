@@ -57,6 +57,12 @@
                 </header>
             </div>
             <div id="galleryWrapper">
+                <% images.forEach(img => { %>
+                    <div class="img_container">
+                        <img src=<%= img.image %> alt="" />
+                        <div class="img_overlay"><%= img.description %></div>
+                    </div>
+                <% }) %>
                 <div class="img_container">
                     <img src="imgs/concert1.jpg" alt="" />
                     <div class="img_overlay">CONCERT</div>
