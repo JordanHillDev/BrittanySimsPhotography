@@ -17,10 +17,6 @@
     clear: both;
 }
 
-button {
-    -webkit-appearance: none
-}
-
 /******************************************
 /* BASE STYLES
 /*******************************************/
@@ -212,6 +208,7 @@ a {
     background-color: var(--light-bg-color);
     transition: 1s ease-in-out;
     color: var(--light-text-color);
+    height: 0px;
 }
 
 #mobileMenuLink {

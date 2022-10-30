@@ -1,0 +1,41 @@
+
+main {
+    width: 100%;
+    margin-top: 20vh;
+    display: grid;
+    place-items: center;
+}
+
+.contactWrapper {
+    /* width: 400px; */
+}
+
+h2 {
+   font-size: 2rem;
+   margin-bottom: 30px;
+}
+
+.inputWrapper {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+.inputWrapper label {
+    margin-bottom: 4px;
+}
+
+.messageInput {
+    height: 200px;
+    width: 300px;
+}
+
+.submitBtn {
+    margin-top: 10px;
+    float: right;
+    padding: .5em 1em;
+    background-color: #fff;
+    color: var(--light-text-color);
+    border: 1px solid var(--light-text-color);
+    cursor: pointer;
+}

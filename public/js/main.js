@@ -9,8 +9,9 @@ const modalImg = modal.querySelector('img')
 const closeModalButton = body.querySelector('#closeModalButton')
 
 // <==== Mobile Menu Button ====>
-mobileMenuLink.addEventListener("click", toggleMobileNav());
+mobileMenuLink.addEventListener("click", toggleMobileNav);
 
+mobileNav.style.height = "0px"
 function toggleMobileNav() {
     mobileNav.style.height === "0px"
     ? (mobileNav.style.height = "250px")

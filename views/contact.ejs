@@ -1,22 +1,90 @@
-<form action="https://formsubmit.co/7c8ac3b459a235de2bc33acfad8208fe" id="contactForm" method="POST">
-    <!-- honeypot -->
-    <input type="text" name="_honey" style="display: none;">
-    <!-- disable captcha -->
-    <input type="hidden" name="_captcha" value="false">
-    <!-- redirects to page in value after submitted -->
-    <input type="hidden" name="_next" value="long url of page you want to go to">
-    
-    <div>
-        <label for="name">Name</label>
-        <input type="text" id="name" required>
-    </div>
-    <div>
-        <label for="email">Email</label>
-        <input type="email" id="email" required>
-    </div>
-    <div>
-        <label for="message">Message</label>
-        <input type="text" id="message" required>
-    </div>
-    <input type="submit" value="Send Message">
-</form>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <title>BRITTANY SIMS PHOTOGRAPHY</title>
+
+        <!-- external CSS link -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Poiret+One&family=Raleway:wght@200;400&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="css/normalize.css" />
+        <link rel="stylesheet" href="css/reset.css" />
+        <link rel="stylesheet" href="css/style.css" />
+        <link rel="stylesheet" href="css/contact.css" />
+    </head>
+    <body>
+        <div id="mobileNav">
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="/concert">CONCERT</a></li>
+                    <li><a href="/lifestyle">LIFESTYLE</a></li>
+                    <li><a href="/realestate">REAL ESTATE</a></li>
+                    <li><a href="/about">ABOUT</a></li>
+                    <li><a href="/contact">CONTACT</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div id="mobileMenuLink">
+            <a>MENU</a>
+        </div>
+        <div id="bodyWrapper">
+            <div id="headerWrapper">
+                <header id="header">
+                    <div id="logo">
+                        <h1><a href="/">BRITTANY SIMS</a></h1>
+                    </div>
+                    <div id="topNav">
+                        <nav>
+                            <ul>
+                                <li id="workDropdownListItem">
+                                    WORK
+                                    <ul id="workDropdown" class="visibleMenu">
+                                        <li><a href="/concert">CONCERT</a></li>
+                                        <li><a href="/lifestyle">LIFESTYLE</a></li>
+                                        <li><a href="/realestate">REAL ESTATE</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="/about">ABOUT</a></li>
+                                <li><a href="/contact">CONTACT</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </header>
+            </div>
+            
+            <main>
+                <div class="contactWrapper">
+                    <h2>Contact</h2>
+                    <form action="https://formsubmit.co/7c8ac3b459a235de2bc33acfad8208fe" id="contactForm" method="POST">
+                        <!-- honeypot -->
+                        <input type="text" name="_honey" style="display: none;">
+                        <!-- disable captcha -->
+                        <input type="hidden" name="_captcha" value="false">
+                        <!-- redirects to page in value after submitted -->
+                        <input type="hidden" name="_next" value="long url of page you want to go to">
+                        
+                        <div class="inputWrapper">
+                            <label for="name">Name:</label>
+                            <input type="text" id="name" required>
+                        </div>
+                        <div class="inputWrapper">
+                            <label for="email">Email:</label>
+                            <input type="email" id="email" required>
+                        </div>
+                        <div class="inputWrapper">
+                            <label for="message">Message:</label>
+                            <textarea class="messageInput" id="message" required></textarea>
+                        </div>
+                        <input class="submitBtn" type="submit" value="Send Message">
+                    </form>
+                </div>
+            </main>
+    </div> 
+    <script src="js/main.js"></script>
+</html>
