@@ -8,9 +8,12 @@ const methodOverride = require("method-override")
 const flash = require('express-flash')
 const logger = require('morgan')
 const connectDB = require('./config/database')
+
+// Routes
 const mainRoutes = require('./routes/main')
 const adminRoutes = require('./routes/admin')
 const loginRoutes = require('./routes/login')
+const contactRoutes = require('./routes/contact')
 
 require('dotenv').config({path: './config/config.env'})
 
@@ -45,6 +48,7 @@ app.use(flash());
 app.use('/', mainRoutes)
 app.use('/admin', adminRoutes)
 app.use('/login', loginRoutes)
+app.use('/contact', contactRoutes)
 
 app.listen(process.env.PORT, () => {
     console.log(`Brittany Sims Photography is running on port ${process.env.PORT}`)
