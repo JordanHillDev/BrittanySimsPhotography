@@ -13,20 +13,27 @@ module.exports = {
         }
     },
     addImg: async (req, res) => {
-        try {
-            const result = await cloudinary.uploader.upload(req.file.path);
-
-            await Image.create({
-                description: req.body.description,
-                category: req.body.category,
-                image: result.secure_url,
-                cloudinaryId: result.public_id,
-            });
-            console.log("Image has been added");
-            res.redirect("/admin");
-        } catch (error) {
-            console.log(error);
-        }
+        const description = req.body.description;
+        const category = req.body.category;
+        console.log(req.body.file)
+        req.files.forEach(async file => {
+            try {
+                const result = await cloudinary.uploader.upload(file.path);
+    
+                await Image.create({
+                    description: description,
+                    category: category,
+                    image: result.secure_url,
+                    cloudinaryId: result.public_id,
+                });
+                console.log("Image has been added");
+                ;
+            } catch (error) {
+                console.log(error);
+            }
+        })
+        res.redirect("/admin")
+        
     },
     deleteImg: async(req, res) => {
         try {

@@ -9,7 +9,7 @@ router.get("/", ensureAuth, adminController.getAdmin)
 
 router.get("/logout", authController.logout);
 
-router.post("/addImg", ensureAuth, upload.single("file"), adminController.addImg)
+router.post("/addImg", ensureAuth, upload.array("file", 12), adminController.addImg)
 
 router.delete("/delete/:id", ensureAuth, adminController.deleteImg)
 

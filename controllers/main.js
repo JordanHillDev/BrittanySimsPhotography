@@ -4,7 +4,6 @@ module.exports = {
     getIndex: async (req, res) => {
         try {
             const images = await Image.find({ category: 'concert'});
-            console.log(images)
             res.render("index.ejs", {
                 images: images
             });
@@ -15,7 +14,6 @@ module.exports = {
     getLifestyle: async (req, res) => {
         try {
             const images = await Image.find({ category: 'lifestyle'});
-            console.log(images)
             res.render("index.ejs", {
                 images: images
             });
@@ -26,7 +24,6 @@ module.exports = {
     getRealEstate: async (req, res) => {
         try {
             const images = await Image.find({ category: 'realEstate'});
-            console.log(images)
             res.render("index.ejs", {
                 images: images
             });
