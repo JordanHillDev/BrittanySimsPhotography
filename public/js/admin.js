@@ -6,6 +6,7 @@ const workDropdown = body.querySelector('#workDropdown')
 const selectCategoryDropdown = body.querySelector('#selectCategory')
 
 // <==== Mobile Menu Button ====>
+mobileNav.style.height = "0px"
 mobileMenuLink.addEventListener("click", function () {
     mobileNav.style.height === "0px"
         ? (mobileNav.style.height = "250px")

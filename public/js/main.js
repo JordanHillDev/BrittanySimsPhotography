@@ -5,7 +5,7 @@ const workDropdownListItem = body.querySelector('#workDropdownListItem')
 const workDropdown = body.querySelector('#workDropdown')
 const imageWrappers = body.querySelectorAll('.img_container')
 const modal = body.querySelector('#modal')
-const modalImg = modal.querySelector('img')
+const modalImg = body.querySelector('#modalImg') 
 const closeModalButton = body.querySelector('#closeModalButton')
 
 // <==== Mobile Menu Button ====>
