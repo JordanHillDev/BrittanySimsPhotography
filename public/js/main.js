@@ -35,23 +35,22 @@ let currImg = ''
 imageWrappers.forEach(el => el.addEventListener('click', function(){
     const img = el.querySelector('img')
     modal.style.display = 'flex'
-    modalImg.src = img.src
-    currImg = img.src
+    modalImg.srcset = img.srcset
+    currImg = img.srcset
 }))
 
 // <==== Image Modal Last / Next Buttons ====>
 const lastButton = body.querySelector('#lastButton')
 const nextButton = body.querySelector('#nextButton')
 const imgSrcArr = []
-imageWrappers.forEach(el => imgSrcArr.push(el.childNodes[1].src))
+imageWrappers.forEach(el => imgSrcArr.push(el.childNodes[1].srcset))
 
 nextButton.addEventListener('click', function(){
-    modalImg.src = imgSrcArr[((imgSrcArr.indexOf(currImg) + 1) % imgSrcArr.length + imgSrcArr.length) % imgSrcArr.length]
-    currImg = modalImg.src
+    modalImg.srcset = imgSrcArr[((imgSrcArr.indexOf(currImg) + 1) % imgSrcArr.length + imgSrcArr.length) % imgSrcArr.length]
+    currImg = modalImg.srcset
 })
 
 lastButton.addEventListener('click', function(){
-    modalImg.src = imgSrcArr[((imgSrcArr.indexOf(currImg) - 1) % imgSrcArr.length + imgSrcArr.length) % imgSrcArr.length]
-    currImg = modalImg.src
+    modalImg.srcset = imgSrcArr[((imgSrcArr.indexOf(currImg) - 1) % imgSrcArr.length + imgSrcArr.length) % imgSrcArr.length]
+    currImg = modalImg.srcset
 })
-

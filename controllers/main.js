@@ -6,7 +6,8 @@ module.exports = {
          
             const images = await Image.find({ category: 'concert'});
             const resizedImages = images.map(ea => {
-                ea.image = ea.image.replace('upload/', `upload/f_auto,q_auto/`)
+                ea.urlBeg= ea.image.slice(0, ea.image.indexOf('upload/') + 7)
+                ea.urlEnd = ea.image.slice(ea.image.indexOf('upload/') + 7)
                 return ea;
             })
             res.render("index.ejs", {
@@ -19,8 +20,13 @@ module.exports = {
     getLifestyle: async (req, res) => {
         try {
             const images = await Image.find({ category: 'lifestyle'});
+            const resizedImages = images.map(ea => {
+                ea.urlBeg= ea.image.slice(0, ea.image.indexOf('upload/') + 7)
+                ea.urlEnd = ea.image.slice(ea.image.indexOf('upload/') + 7)
+                return ea;
+            })
             res.render("index.ejs", {
-                images: images
+                images: resizedImages
             });
         } catch (error) {
             console.log(error);
@@ -29,8 +35,13 @@ module.exports = {
     getRealEstate: async (req, res) => {
         try {
             const images = await Image.find({ category: 'realEstate'});
+            const resizedImages = images.map(ea => {
+                ea.urlBeg= ea.image.slice(0, ea.image.indexOf('upload/') + 7)
+                ea.urlEnd = ea.image.slice(ea.image.indexOf('upload/') + 7)
+                return ea;
+            })
             res.render("index.ejs", {
-                images: images
+                images: resizedImages
             });
         } catch (error) {
             console.log(error);

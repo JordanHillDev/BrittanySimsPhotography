@@ -94,7 +94,7 @@
                 <section id="adminImgGallery">
                     <% images.forEach(img => { %>
                         <div data-category=<%= img.category %> class="adminImgWrapper">
-                            <img src=<%= img.image %>>
+                            <img src=<%= img.urlBeg + 'w_375/' + img.urlEnd %>>
                             <span><%= img.description %></span>
                             <form action="admin/delete/<%= img._id %>?_method=DELETE" method="POST">
                                 <button type="submit">Remove</button>

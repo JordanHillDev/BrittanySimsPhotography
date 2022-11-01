@@ -57,9 +57,19 @@
                 </header>
             </div>
             <div id="galleryWrapper">
+                
                 <% images.forEach(img => { %>
                     <div class="img_container">
-                        <img src=<%= img.image %> alt="" />
+                        <img 
+                            srcset="<%= img.urlBeg + 'w_375/f_auto/q_auto/' + img.urlEnd %> 375w,
+                                    <%= img.urlBeg + 'w_600/f_auto/q_auto/' + img.urlEnd %> 600w,
+                                    <%= img.urlBeg + 'w_800/f_auto/q_auto/' + img.urlEnd %> 800w,
+                                    <%= img.urlBeg + 'w_1000/f_auto/q_auto/' + img.urlEnd %> 1000w"
+                            sizes="(max-width: 400px) 400px,
+                                    ((min-width: 400px) and (max-width: 600px)) 600px,
+                                    ((min-width: 600px) and (max-width: 800px)) 800px,
+                                    (min-width: 1000px) 1000px"
+                            src=<%= img.urlBeg + 'w_auto/q_auto/f_auto/' + img.urlEnd %> alt="" />
                         <div class="img_overlay"><%= img.description %></div>
                     </div>
                 <% }) %>
