@@ -6,7 +6,7 @@ module.exports = {
          
             const images = await Image.find({ category: 'concert'});
             const resizedImages = images.map(ea => {
-                ea.image = ea.image.replace('upload/', `upload/q_auto/`)
+                ea.image = ea.image.replace('upload/', `upload/f_auto,q_auto/`)
                 return ea;
             })
             res.render("index.ejs", {
