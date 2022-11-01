@@ -44,6 +44,9 @@ a {
     max-width: 2000px;
     margin: 0 auto;
     background-color: white;
+    min-height: 100vh;
+    position: relative;
+    padding: 1rem 1rem 3rem 1rem;
 }
 
 #mobileNav {
@@ -70,11 +73,6 @@ a {
     flex-direction: column;
     align-items: center;
     padding-top: 30px;
-}
-
-#bodyWrapper {
-    /* overflow: auto; */
-    padding: 1rem;
 }
 
 #header {
@@ -156,6 +154,14 @@ a {
     padding: 1.5rem;
 }
 
+footer {
+    position: absolute;
+    width: 100%;
+    bottom: 20px;
+    display: flex;
+    justify-content: center;
+}
+
 #modal {
     display: none;
     align-items: center;
@@ -200,6 +206,7 @@ a {
 #modal span {
     margin: 0 10px;
 }
+
 
 /******************************************
 /* ADDITIONAL STYLES
