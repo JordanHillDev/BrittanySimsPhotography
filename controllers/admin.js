@@ -4,7 +4,7 @@ const Image = require("../models/Image");
 module.exports = {
     getAdmin: async (req, res) => {
         try {
-            const images = await Image.find();
+            const images = await Image.find().lean();
             const resizedImages = images.map(ea => {
                 ea.urlBeg= ea.image.slice(0, ea.image.indexOf('upload/') + 7)
                 ea.urlEnd = ea.image.slice(ea.image.indexOf('upload/') + 7)

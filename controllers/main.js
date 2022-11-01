@@ -4,7 +4,7 @@ module.exports = {
     getIndex: async (req, res) => {
         try {
          
-            const images = await Image.find({ category: 'concert'});
+            const images = await Image.find({ category: 'concert'}).lean();
             const resizedImages = images.map(ea => {
                 ea.urlBeg= ea.image.slice(0, ea.image.indexOf('upload/') + 7)
                 ea.urlEnd = ea.image.slice(ea.image.indexOf('upload/') + 7)
@@ -19,7 +19,7 @@ module.exports = {
     },
     getLifestyle: async (req, res) => {
         try {
-            const images = await Image.find({ category: 'lifestyle'});
+            const images = await Image.find({ category: 'lifestyle'}).lean();
             const resizedImages = images.map(ea => {
                 ea.urlBeg= ea.image.slice(0, ea.image.indexOf('upload/') + 7)
                 ea.urlEnd = ea.image.slice(ea.image.indexOf('upload/') + 7)
@@ -34,7 +34,7 @@ module.exports = {
     },
     getRealEstate: async (req, res) => {
         try {
-            const images = await Image.find({ category: 'realEstate'});
+            const images = await Image.find({ category: 'realEstate'}).lean();
             const resizedImages = images.map(ea => {
                 ea.urlBeg= ea.image.slice(0, ea.image.indexOf('upload/') + 7)
                 ea.urlEnd = ea.image.slice(ea.image.indexOf('upload/') + 7)
