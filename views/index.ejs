@@ -60,7 +60,8 @@
                 
                 <% images.forEach(img => { %>
                     <div class="img_container">
-                        <img 
+                        <img
+                            loading="lazy" 
                             srcset="<%= img.urlBeg + 'w_375/f_auto/q_auto/' + img.urlEnd %> 375w,
                                     <%= img.urlBeg + 'w_600/f_auto/q_auto/' + img.urlEnd %> 600w,
                                     <%= img.urlBeg + 'w_800/f_auto/q_auto/' + img.urlEnd %> 800w,
