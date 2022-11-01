@@ -3,9 +3,14 @@ const Image = require("../models/Image");
 module.exports = {
     getIndex: async (req, res) => {
         try {
+         
             const images = await Image.find({ category: 'concert'});
+            const resizedImages = images.map(ea => {
+                ea.image = ea.image.replace('upload/', `upload/q_auto/`)
+                return ea;
+            })
             res.render("index.ejs", {
-                images: images
+                images: resizedImages
             });
         } catch (error) {
             console.log(error);
