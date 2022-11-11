@@ -45,12 +45,13 @@ const nextButton = body.querySelector('#nextButton')
 const imgSrcArr = []
 imageWrappers.forEach(el => imgSrcArr.push(el.childNodes[1].srcset))
 
-nextButton.addEventListener('click', function(){
+nextButton.addEventListener('click', function(e){
     modalImg.srcset = imgSrcArr[((imgSrcArr.indexOf(currImg) + 1) % imgSrcArr.length + imgSrcArr.length) % imgSrcArr.length]
     currImg = modalImg.srcset
 })
 
-lastButton.addEventListener('click', function(){
+lastButton.addEventListener('click', function(e){
     modalImg.srcset = imgSrcArr[((imgSrcArr.indexOf(currImg) - 1) % imgSrcArr.length + imgSrcArr.length) % imgSrcArr.length]
     currImg = modalImg.srcset
 })
+

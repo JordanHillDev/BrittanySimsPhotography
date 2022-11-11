@@ -61,8 +61,11 @@
                 <% images.forEach(img => { %>
                     <div class="img_container">
                         <img 
-                           
-                            src=<%= img.urlBeg + 'w_1000/f_auto/' + img.urlEnd %> alt="" />
+                            srcset="<%= img.urlBeg + 'w_600/' + img.urlEnd %> 400w,
+                                    <%= img.urlBeg + 'w_800/' + img.urlEnd %> 600w,
+                                    <%= img.urlBeg + 'w_1100/' + img.urlEnd %> 800w,
+                                    <%= img.urlBeg + 'w_1200/' + img.urlEnd %> 1000w"
+                            src=<%= img.urlBeg + 'w_500/f_auto/' + img.urlEnd %> alt="" />
                         <div class="img_overlay"><%= img.description %></div>
                     </div>
                 <% }) %>
