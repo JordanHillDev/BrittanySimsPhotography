@@ -58,8 +58,28 @@
                 </header>
             </div>
             <a href="admin/logout" id="logoutBtn">LOGOUT</a>
-            
 
+            <!-- ABOUT -->
+            <section id="about">
+                <h2>About</h2>
+                <div id="aboutInputContainer">
+                    <section>
+                        <img src=<%= profileImg.urlBeg + 'w_375/' + profileImg.urlEnd %> alt="">
+                        <form class="adminForm" action="admin/addAboutImg?_method=PUT" enctype="multipart/form-data" method="POST">
+                            <input type="file" id="profileImageUpload" name="file"/>
+                            <input type="submit">
+                        </form>
+                    </section>
+                    <section id="bioContainer">
+                        <form action="admin/addBio?_method=PUT" method="POST" >
+                            <textarea name="bio" id="bio" cols="30" rows="10"><%= bio %></textarea>
+                            <input type="submit">
+                        </form>
+                    </section>
+                </div>
+            </section>
+            
+            <!-- IMAGES -->
             <section id="images">
                 <h2>Images</h2>
                 <form class="adminForm" action="admin/addImg" enctype="multipart/form-data" method="POST">
@@ -81,34 +101,29 @@
                     </div>
                     <button type="submit">Submit</button>
                 </form>
-            </section>
-    
-            <section id="adminGalleryWrapper">
-                <select name="selectCategory" id="selectCategory">
-                    <option value="all">All</option>
-                    <option value="concert">Concert</option>
-                    <option value="lifestyle">Lifestyle</option>
-                    <option value="realEstate">Real Estate</option>
-                </select>
-    
-                <section id="adminImgGallery">
-                    <% images.forEach(img => { %>
-                        <div data-category=<%= img.category %> class="adminImgWrapper">
-                            <img src=<%= img.urlBeg + 'w_375/' + img.urlEnd %>>
-                            <span><%= img.description %></span>
-                            <form action="admin/delete/<%= img._id %>?_method=DELETE" method="POST">
-                                <button type="submit">Remove</button>
-                            </form>
-                        </div>
-                        
-                    <% }) %>
+                <section id="adminGalleryWrapper">
+                    <select name="selectCategory" id="selectCategory">
+                        <option value="all">All</option>
+                        <option value="concert">Concert</option>
+                        <option value="lifestyle">Lifestyle</option>
+                        <option value="realEstate">Real Estate</option>
+                    </select>
+        
+                    <section id="adminImgGallery">
+                        <% images.forEach(img => { %>
+                            <div data-category=<%= img.category %> class="adminImgWrapper">
+                                <img src=<%= img.urlBeg + 'w_375/' + img.urlEnd %>>
+                                <span><%= img.description %></span>
+                                <form action="admin/delete/<%= img._id %>?_method=DELETE" method="POST">
+                                    <button type="submit">Remove</button>
+                                </form>
+                            </div>
+                            
+                        <% }) %>
+                    </section>
                 </section>
             </section>
         </div>
-
-        
-        
-
         <script src="js/admin.js"></script>
     </body>
 </html>

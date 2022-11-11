@@ -1,4 +1,5 @@
 const Image = require("../models/Image");
+const Profile = require("../models/Profile");
 
 module.exports = {
     getIndex: async (req, res) => {
@@ -48,8 +49,16 @@ module.exports = {
             console.log(error);
         }
     },
-    getAbout: (req, res) => {
-        res.render("about.ejs")
+    getAbout: async (req, res) => {
+        try {
+            const profile = await Profile.findOne({_id: '636e70a27e6d7d56a9718f20'})
+            res.render("about.ejs", {
+                profileImg: profile.image,
+                bio: profile.about
+            })
+        } catch (error) {
+            console.log(error)
+        }
     },
     getContact: (req, res) => {
         res.render("contact.ejs")

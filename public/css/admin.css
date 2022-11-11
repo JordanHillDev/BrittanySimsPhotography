@@ -10,7 +10,7 @@
     padding: 1rem;
 }
 
-#images h2 {
+h2 {
     font-size: 2rem;
     margin-bottom: 1rem;
 }
@@ -73,3 +73,21 @@ button {
 .adminImgWrapper form {
     margin-top: auto;
 }
+
+#aboutInputContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+#aboutInputContainer section {
+    display: flex;
+    flex-direction: column;
+}
+
+#bioContainer form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+

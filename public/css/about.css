@@ -17,6 +17,7 @@ p {
     padding: 1rem 5vw;
     line-height: 1.2;
     max-width: 60ch;
+    white-space: pre-wrap;
 }
 
 @media screen and (min-width: 1000px) {
