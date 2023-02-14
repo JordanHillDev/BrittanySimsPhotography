@@ -2,7 +2,7 @@ const Image = require("../models/Image");
 const Profile = require("../models/Profile");
 
 module.exports = {
-    getIndex: async (req, res) => {
+    getConcert: async (req, res) => {
         try {
             console.time()
             const images = await Image.find({ category: 'concert'}).lean();
