@@ -8,6 +8,7 @@ const methodOverride = require("method-override")
 const flash = require('express-flash')
 const logger = require('morgan')
 const connectDB = require('./config/database')
+const cors = require('cors')
 
 // Routes
 const mainRoutes = require('./routes/main')
@@ -22,6 +23,7 @@ require("./config/passport")(passport);
 connectDB()
 
 app.set('view engine', 'ejs')
+app.use(cors())
 app.use(express.static('public'))
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
