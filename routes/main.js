@@ -7,6 +7,7 @@ router.get("/concert", mainController.getConcert);
 router.get("/lifestyle", mainController.getLifestyle);
 router.get("/realestate", mainController.getRealEstate);
 router.get("/about", mainController.getAbout);
+router.get('/wakeUp', mainController.wakeUp)
 
 
 module.exports = router;
